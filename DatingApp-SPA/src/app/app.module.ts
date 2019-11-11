@@ -24,6 +24,7 @@ import { MemberListResolver } from './_resolvers/member-list-resolver';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { MemberEditResolver } from './_resolvers/member-edit-resolver';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
+import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 // I added these from Section 9 #91 @11:42 because they were missing on mine
 //import { AlertifyService } from './_services/alertify.service';
 //import { AuthGuard } from './_guards/auth.guard';
@@ -52,7 +53,8 @@ export class CustomHammerConfig extends HammerGestureConfig {
       MessagesComponent,
       MemberCardComponent,
       MemberDetailComponent,
-      MemberEditComponent
+      MemberEditComponent,
+      PhotoEditorComponent
    ],
    imports: [
       BrowserModule,
