@@ -29,11 +29,12 @@ import { MemberEditResolver } from './_resolvers/member-edit-resolver';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { ListsResolver } from './_resolvers/lists.resolver';
+import { MessagesResolver } from './_resolvers/messages-resolver';
 
 // I added these from Section 9 #91 @11:42 because they were missing on mine
-//import { AlertifyService } from './_services/alertify.service';
-//import { AuthGuard } from './_guards/auth.guard';
-//import { UserService } from './_services/user.service';
+// import { AlertifyService } from './_services/alertify.service';
+// import { AuthGuard } from './_guards/auth.guard';
+// import { UserService } from './_services/user.service';
 
 
 export function tokenGetter() {
@@ -79,7 +80,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
       JwtModule.forRoot({
          config: {
             tokenGetter: tokenGetter,
-            whitelistedDomains:['localhost:5000'],
+            whitelistedDomains: ['localhost:5000'],
             blacklistedRoutes: ['localhost:5000/api/auth']
          }
       })
@@ -87,14 +88,15 @@ export class CustomHammerConfig extends HammerGestureConfig {
    providers: [
       AuthService,
       ErrorInterceptorProvider,
-      //AlertifyService,  // I added these from Section 9 #91 @11:42 because they were missing on mine
-      //AuthGuard,        // I added these from Section 9 #91 @11:42 because they were missing on mine
-      //UserService,      // I added these from Section 9 #91 @11:42 because they were missing on mine
+      // AlertifyService,  // I added these from Section 9 #91 @11:42 because they were missing on mine
+      // AuthGuard,        // I added these from Section 9 #91 @11:42 because they were missing on mine
+      // UserService,      // I added these from Section 9 #91 @11:42 because they were missing on mine
       MemberDetailResolver,
       MemberListResolver,
       MemberEditResolver,
       PreventUnsavedChanges,
       ListsResolver,
+      MessagesResolver,
       { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig}
    ],
    bootstrap: [
